@@ -183,7 +183,7 @@ button{font:inherit}
 </main>
 
 <script>
-[
+const models=[
 ['2007','iPhone','The original multitouch phone changed the idea of what a smartphone could be. Its touchscreen interface, visual web browser, iPod features and simple design created the foundation for everything that followed.'],
 ['2008','iPhone 3G','Faster cellular data and the App Store transformed iPhone from a finished product into a platform that developers could continuously expand.'],
 ['2009','iPhone 3GS','Speed became the headline. Video recording, voice control and a faster processor showed how Apple could preserve the design while changing almost everything underneath it.'],
@@ -421,7 +421,7 @@ function updateScroll(){
       deviceWrap.style.setProperty("--device-x",Math.max(-14,Math.min(14,p*12)).toFixed(2));
       deviceWrap.style.setProperty("--rot-y",Math.max(-8,Math.min(8,p*6)).toFixed(2));
       deviceWrap.style.setProperty("--rot-z",Math.max(-2.4,Math.min(2.4,p*1.8)).toFixed(2));
-      deviceWrap.style.setProperty("--device-scale",(Math.max(-.03,Math.min(.12,Math.abs(p)*.08))).toFixed(3));
+      deviceWrap.style.setProperty("--device-scale",(Math.max(-.03,Math.min(.12,Math.abs(p)*.1))).toFixed(3));deviceWrap.style.setProperty("--blur",Math.max(0,Math.min(2,Math.abs(p)*1.2)).toFixed(2));
     }
   }
 }
