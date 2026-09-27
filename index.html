@@ -64,22 +64,16 @@ const models=[
 ['2024','iPhone 16 Plus','The Plus kept the large-screen format while bringing the 16 generation’s controls and camera improvements.'],
 ['2024','iPhone 16 Pro','A larger display, A18 Pro, Camera Control and stronger pro video features expanded the high-end creative toolset.'],
 ['2024','iPhone 16 Pro Max','The largest 16 Pro combined the A18 Pro, advanced camera system and the longest battery life in the generation.'],
+['2025','iPhone 16e','The 16e brought the all-screen design, A18 performance, Apple Intelligence support and a 48MP 2-in-1 camera system to the more accessible end of the line.'],
 ['2025','iPhone 17','The 17 generation continued the shift toward a thinner, more capable design while expanding the standard iPhone experience.'],
 ['2025','iPhone Air','A new thin-form factor made physical design itself the headline, showing Apple experimenting with a different balance between size, weight and capability.'],
 ['2025','iPhone 17 Pro','The Pro generation pushed performance, cameras and sustained creative workloads further with a redesigned high-end chassis.'],
 ['2025','iPhone 17 Pro Max','The largest 17 Pro emphasized endurance, display area and the full camera system in Apple’s flagship format.'],
-['2026','iPhone 18','The next generation carries the iPhone platform forward with newer silicon, cameras and Apple’s expanding intelligence features.'],
+['2026','iPhone 17e','The 17e continued the accessible iPhone line with A19 performance, MagSafe, Ceramic Shield 2 and a 48MP 2-in-1 camera system.'],
 ['2026','iPhone 18 Pro','The 18 Pro generation continues Apple’s high-end trajectory around camera capability, display technology and computational performance.'],
 ['2026','iPhone 18 Pro Max','The largest 18 Pro represents the current peak of the traditional iPhone form: maximum display, battery and camera capability.'],
 ['2026','iPhone Duo','A new foldable direction expands the iPhone idea beyond the familiar slab, turning the display itself into the defining piece of the product.']
 ];
-// The standard iPhone 18 has not been announced in Apple's current 2026 newsroom archive; keep the timeline to released/announced models.
-const announced18 = models.findIndex(m=>m[1]==='iPhone 18');
-if(announced18 !== -1) models.splice(announced18,1);
-// Add the two e-series models so the timeline covers the complete major lineup.
-models.splice(46,0,['2025','iPhone 16e','A modern SE successor','The 16e replaced the SE position with an all-screen 6.1-inch design, A18 performance, Apple Intelligence, a 48MP 2-in-1 camera system, and Apple\'s first C1 cellular modem.']);
-models.splice(51,0,['2026','iPhone 17e','The value line gets smarter','The 17e brought A19 performance, a 48MP 2-in-1 camera system, MagSafe, Ceramic Shield 2, and 256GB starting storage to the more accessible end of the iPhone family.']);
-
 const cameraCount=(name)=>{const n=name.toLowerCase();if(n.includes('duo'))return 2;if(n.includes('pro'))return 3;const dual=['iphone xs','iphone xs max','iphone xr','iphone 11','iphone 12 mini','iphone 12','iphone 13 mini','iphone 13','iphone 14','iphone 14 plus','iphone 15','iphone 15 plus','iphone 16','iphone 16 plus','iphone 17'];return dual.includes(n)?2:1;};
 const isHomeButton=(name)=>{const n=name.toLowerCase();return n==='iphone'||n==='iphone 3g'||n==='iphone 3gs'||n==='iphone 4'||n==='iphone 4s'||n==='iphone 5'||n==='iphone 5c'||n==='iphone 5s'||n==='iphone 6'||n==='iphone 6 plus'||n==='iphone 6s'||n==='iphone 6s plus'||n.startsWith('iphone se')||n==='iphone 7'||n==='iphone 7 plus'||n==='iphone 8'||n==='iphone 8 plus';};
 const hasDynamicIsland=(name)=>['iphone 14 pro','iphone 14 pro max','iphone 15','iphone 15 plus','iphone 15 pro','iphone 15 pro max','iphone 16','iphone 16 plus','iphone 16 pro','iphone 16 pro max','iphone 17','iphone 17 pro','iphone 17 pro max','iphone air','iphone 18 pro','iphone 18 pro max'].includes(name.toLowerCase());
